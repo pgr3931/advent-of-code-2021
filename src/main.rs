@@ -1,12 +1,14 @@
-mod day1;
 mod lib;
 
-use std::io;
+// mod day1;
+// use day1::solve;
 
-use crate::day1::solve;
+mod day2;
+use day2::solve;
 
-fn main() -> Result<(), io::Error> {
-    solve()?;
-
-    Ok(())
+fn main() {
+    match solve() {
+        Err(err) => println!("{}", err),
+        _ => {}
+    }
 }
