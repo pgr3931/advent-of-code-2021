@@ -1,4 +1,4 @@
-use crate::lib::read_lines;
+use crate::utils::read_lines;
 
 pub fn solve() -> Result<(), String> {
     let values = read_lines("src/day3/input.txt");

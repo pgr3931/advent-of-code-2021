@@ -4,7 +4,7 @@ use std::{
     io::{self, BufReader, Lines},
 };
 
-use crate::lib::{read_lines, read_lines_iterable};
+use crate::utils::{read_lines, read_lines_iterable};
 
 pub fn solve() -> Result<(), io::Error> {
     let lines = read_lines_iterable("src/day1/input.txt")?;

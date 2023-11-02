@@ -1,4 +1,5 @@
-use crate::lib::{read_lines_into_structs, Instantiable};
+use crate::utils::{read_lines_into_structs, Instantiable};
+use regex::Regex;
 
 struct Command {
     dir: String,
@@ -15,7 +16,11 @@ impl Instantiable for Command {
 }
 
 pub fn solve() -> Result<(), String> {
-    let commands = read_lines_into_structs::<Command>("src/day2/input.txt", " ");
+    let commands = read_lines_into_structs::<Command, _>(
+        "src/day2/input.txt",
+        Regex::new(r"\s+").unwrap(),
+        |_, _| true,
+    );
 
     let mut result = part1(&commands);
     println!("Part 1: {}", result);
