@@ -12,8 +12,11 @@ mod utils;
 // mod day4;
 // use day4::solve;
 
-mod day5;
-use day5::solve;
+// mod day5;
+// use day5::solve;
+
+mod day6;
+use day6::solve;
 
 fn main() {
     match solve() {
