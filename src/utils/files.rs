@@ -26,10 +26,10 @@ pub trait Instantiable {
     fn new(values: Vec<&str>) -> Self;
 }
 
-pub fn read_lines_into_structs<T, F>(filename: &str, separator: Regex, retain_line: F) -> Vec<T>
+pub fn read_lines_into_structs<T, F>(filename: &str, separator: Regex, mut retain_line: F) -> Vec<T>
 where
     T: Instantiable,
-    F: Fn(String, i32) -> bool,
+    F: FnMut(String, i32) -> bool,
 {
     let mut vec: Vec<T> = Vec::new();
     let mut i = 0;
